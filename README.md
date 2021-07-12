@@ -75,3 +75,11 @@ setupTexts.js
 enable email auth as a sign-in method
 
 # use TMDB for movie database
+
+#
+
+counterSlice.js
+counterAPI.js
+counterSlice.speed.spec.js
+
+has all been moved to features folder from counter folder
