@@ -42,4 +42,27 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
 # movie-platform-app
+
+# preparation
+
+## create an app
+
+$ npx create-react-app movie-platform-app --template redux
+
+## setup firebase
+
+click the cog (setting)
+
+click <>
+
+and follow 5 steps.
+
+then click config under SDK setup and configuration
+
+copy and paste it to firebase.js folder
+
+## setup firebase authentication
+
+enable email auth as a sign-in method
