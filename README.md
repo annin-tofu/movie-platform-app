@@ -63,6 +63,15 @@ then click config under SDK setup and configuration
 
 copy and paste it to firebase.js folder
 
+## for little clean-up
+
+delete below 3 files in src folder
+App.test.js
+logo.svg
+setupTexts.js
+
 ## setup firebase authentication
 
 enable email auth as a sign-in method
+
+# use TMDB for movie database
