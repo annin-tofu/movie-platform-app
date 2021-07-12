@@ -1,0 +1,41 @@
+.nav {
+  position: fixed;
+  top: 0;
+  padding: 20px;
+  width: 100%;
+  height: 30px;
+  z-index: 1;
+
+  /* Animations */
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.nav__contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__black {
+  background-color: #111;
+}
+
+.nav__logo {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  /* if the nextfix logo is too small/big. change here */
+  width: 80px;
+  object-fit: contain;
+  padding-left: 20px;
+  /* when cursor hovers over the logo, finger pointer is enabled */
+  cursor: pointer;
+}
+
+.nav__avatar {
+  cursor: pointer;
+  position: fixed;
+  /* for avatar not to touch the right end, give 20px */
+  right: 20px;
+  width: 30px;
+}
