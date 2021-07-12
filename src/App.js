@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.css";
+import HomeScreen from "./HomeScreen";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Lets build movie-platform-app!</h1>
+    // BEM
+    <div className="app">
+      <HomeScreen />
     </div>
   );
 }
