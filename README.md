@@ -89,3 +89,5 @@ has all been moved to features folder from counter folder
 http://getbem.com/naming/
 
 BEM stands for Block, Element, and Modifier. It's a CSS naming convention for writing cleaner and more readable CSS classes. BEM also aims to write independent CSS blocks in order to reuse them later in your project.
+
+https://youtu.be/1TCw9wO1neA?t=3880

@@ -9,9 +9,13 @@ function HomeScreen() {
     <div className="homeScreen">
       {/* NAV BAR */}
       <Nav />
-
+      <h1>TEST</h1>
+      <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1>
+      <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1>
+      <h1>TEST</h1>
+      <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1>
+      <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1> <h1>TEST</h1>
       {/* BANNER */}
-
       {/* ROW */}
     </div>
   );
