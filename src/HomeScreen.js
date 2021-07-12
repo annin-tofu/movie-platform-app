@@ -7,11 +7,12 @@ import Nav from "./Nav";
 function HomeScreen() {
   return (
     <div className="homeScreen">
-      {/* Nav */}
+      {/* NAV BAR */}
       <Nav />
 
-      {/* Banner */}
-      {/* Row */}
+      {/* BANNER */}
+
+      {/* ROW */}
     </div>
   );
 }
