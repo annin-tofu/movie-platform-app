@@ -5,6 +5,10 @@ import React, { useEffect, useState } from "react";
 import "./Nav.css";
 
 function Nav() {
+  //This is for below string interpretation as in
+  // <div className={`nav ${show && "nav__black"}`}></div>
+  // https://youtu.be/1TCw9wO1neA?t=3931
+
   const [show, handleShow] = useState(false);
 
   const transitionNavBar = () => {
@@ -21,7 +25,11 @@ function Nav() {
   }, []);
 
   return (
-    <div className="nav nav__black">
+    // // Originally, the next line was
+    // <div className= "nav nav__black">
+    // changed as below to enables effect that styling "nav__black" will be disabled and will be transparent
+    // it reads, Only render the "nav__black" class if the variable "show" is true
+    <div className={`nav ${show && "nav__black"}`}>
       {/* BEM */}
       <div className="nav__contents">
         {/* NEXTFIX LOGO */}

@@ -91,3 +91,11 @@ http://getbem.com/naming/
 BEM stands for Block, Element, and Modifier. It's a CSS naming convention for writing cleaner and more readable CSS classes. BEM also aims to write independent CSS blocks in order to reuse them later in your project.
 
 https://youtu.be/1TCw9wO1neA?t=3880
+
+# effect for header styling
+
+    // // Originally, the next line was
+    // <div className= "nav nav__black">
+    // changed as below to enables effect that styling "nav__black" will be disabled and will be transparent
+    // it reads, Only render the "nav__black" class if the variable "show" is true
+    <div className={`nav ${show && "nav__black"}`}>
