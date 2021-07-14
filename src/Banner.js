@@ -19,9 +19,9 @@ function Banner() {
         <h1 className="banner__title">Movie Name</h1>
         <div className="banner__buttons">
           {/* PLAY BUTTON */}
-          <button>Play</button>
+          <button className="banner__button">Play</button>
           {/* MY LIST BUTTON */}
-          <button>My List</button>
+          <button className="banner__button">My List</button>
         </div>
         <h1 className="banner__bescription">This is a test description</h1>
       </div>
