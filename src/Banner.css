@@ -4,3 +4,60 @@
   color: white;
   object-fit: contain;
 }
+
+/* for "Movie Name", buttons for "Play" and "My List", as well as "Description" */
+.banner__contents {
+  margin-left: 30px;
+  padding-top: 140px;
+  height: 190px;
+}
+
+.banner__title {
+  /* Pixel ( px ) is a commonly used CSS unit on websites. ... Element ( em ) and Root element ( rem ) are responsive units interpreted into equivalent px unit by the browser. They are relative units. Change in the value of the parent or root element affects the value of relative units. */
+  /* Equal to the computed value of font-size on the root element. When specified on the font-size property of the root element, the rem units refer to the property's initial value. This means that 1rem equals the font size of the html element (which for most browsers has a default value of 16px). */
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+
+.banner__description {
+  width: 45rem;
+  line-height: 1.3;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  max-width: 360px;
+  height: 80px;
+}
+
+.banner--fadeBottom {
+  height: 7.4rem;
+  background-image: linear-gradient(
+    /* 180deg, here, means the axis is x-axis */ 180deg,
+    /* background color set to transparent */ transparent,
+    /* in the middle */ rgba(37, 37, 37, 0.61),
+    /* then slowly ends at #111 (black) */ #111
+  );
+}
+
+.banner__button {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  border-radius: 0.2vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+  background-color: rgba(51, 51, 51, 0.5);
+  padding-bottom: 0.5rem;
+}
+
+.banner__button:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  /* CSS animation 
+   http://un-tech.jp/smooth-css-animation/ */
+  transition: all 0.2s;
+}

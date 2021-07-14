@@ -92,10 +92,55 @@ BEM stands for Block, Element, and Modifier. It's a CSS naming convention for wr
 
 https://youtu.be/1TCw9wO1neA?t=3880
 
-# effect for header styling
+# effect for header styling in Nav.js
 
-    // // Originally, the next line was
-    // <div className= "nav nav__black">
+    Originally, the line was
+    <div className= "nav nav__black">
     // changed as below to enables effect that styling "nav__black" will be disabled and will be transparent
     // it reads, Only render the "nav__black" class if the variable "show" is true
     <div className={`nav ${show && "nav__black"}`}>
+
+# Little Trick for faster coding
+
+h1.banner ==> <h1 className=“banner”></h1>
+button.banner**button ==> <button className="banner**button"></button>
+
+# in CSS, what is "rem" unit?
+
+<!-- as in,
+.banner__title {
+font-size: 3rem;
+font-weight: 800;
+padding-bottom: 0.3rem
+}
+-->
+
+https://www.sitepoint.com/understanding-and-using-rem-units-in-css/
+
+/_ Pixel ( px ) is a commonly used CSS unit on websites. ... Element ( em ) and Root element ( rem ) are responsive units interpreted into equivalent px unit by the browser. They are relative units. Change in the value of the parent or root element affects the value of relative units. _/
+/_ Equal to the computed value of font-size on the root element. When specified on the font-size property of the root element, the rem units refer to the property's initial value. This means that 1rem equals the font size of the html element (which for most browsers has a default value of 16px). _/
+
+# Truncate function
+
+// in case, "description" is way too long, it truncates
+// https://www.coderrocketfuel.com/article/truncate-a-string-at-a-given-length-using-javascript
+// Also, note that Truncates a string. Unless split is true, truncate will not split words up, and instead discard the word where the truncation occurred. This is different from Ellipsis function
+
+// https://stackoverflow.com/questions/4700226/i-want-to-truncate-a-text-or-line-with-ellipsis-using-javascript
+function truncate(string, n) {
+return string?.length > n ? string.substr(0, n - 1) + "..." : string;
+}
+
+# Why use back-tick(`)
+
+https://stackoverflow.com/questions/27678052/usage-of-the-backtick-character-in-javascript
+
+This is a feature called template literals.
+
+They were called "template strings" in prior editions of the ECMAScript 2015 specification.
+
+Template literals are supported by Firefox 34, Chrome 41, and Edge 12 and above, but not by Internet Explorer.
+
+Template literals can be used to represent multi-line strings and may use "interpolation" to insert variables
+
+What is more important, they can contain not just a variable name, but any JavaScript expression:
