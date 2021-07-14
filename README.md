@@ -144,3 +144,23 @@ Template literals are supported by Firefox 34, Chrome 41, and Edge 12 and above,
 Template literals can be used to represent multi-line strings and may use "interpolation" to insert variables
 
 What is more important, they can contain not just a variable name, but any JavaScript expression:
+
+# Implementing the API (Connect to TMDb)
+
+https://youtu.be/1TCw9wO1neA?t=5403
+
+to get the API Key, do the followings
+-go to TMDb
+-Then go to Settings
+-then click API
+(If you are here for the very first time, you might have to go through application submission process to get API Key. Just say the purpose for needing the API Key is for Personal use)
+￼
+-copy the API Key
+
+> > > > back to JSCode
+
+-create file called axios.js in src folder
+
+//axios is good library for making request.
+// promise-based library for when making request to a server across the internet.
+import axios from 'axios'
