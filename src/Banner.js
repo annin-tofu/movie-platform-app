@@ -52,7 +52,8 @@ function Banner() {
       }}
     >
       <div className="banner__contents">
-        <h1 className="banner__title">Movie Name</h1>
+        {/* if there is no "movie.title", and use "movie.name". and if there is no "movie.name", and use "movie.original_name" */}
+        <h1 className="banner__title">{movie?.title || movie?.name || movie?.original_name}</h1>
         <div className="banner__buttons">
           {/* PLAY BUTTON */}
           <button className="banner__button">Play</button>
@@ -60,15 +61,9 @@ function Banner() {
           <button className="banner__button">My List</button>
         </div>
         <h1 className="banner__description">
+          {/* truncate: cuts the long text shorter and ends it with "..." */}
           {truncate(
-            `This is a test description. This is a test description. This is a test
-          description. This is a test description. This is a test description.
-          This is a test description. This is a test description. This is a test
-          description. This is a test description. This is a test description.
-          This is a test description. This is a test description. This is a test
-          description. This is a test description. This is a test description.
-          This is a test description. This is a test description. This is a test
-          description. This is a test description. This is a test description.`,
+         movie?.overview,
             150
           )}
         </h1>
