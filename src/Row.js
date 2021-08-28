@@ -36,18 +36,24 @@ function Row({
   return (
     <div className="row">
       <h2>{title}</h2>
-      {movies.map(
-        (
-          movie //for every single "movie", return image
-        ) => (
-          <img
-            src={`${base_url}${
-              isLargeRow ? movie.poster_path : movie.backdrop_path
-            }`} // if it is a LargeRow, then use "movie.poster_path". If not (if it is a small one, then use "movie.backdrop_path" 02020600
-            alt={movie.name} // 02020720
-          /> //interpolate a string for src. previously it was src="" 02020510 https://dmitripavlutin.com/string-interpolation-in-javascript/
-        )
-      )}
+
+      {/* 02021000 */}
+      <div className="row__posters">
+        {movies.map(
+          (
+            movie //for every single "movie", return image
+          ) => (
+            <img
+              className={`row__poster ${isLargeRow && "row__posterLarge"}`} //giving another className to make it look nice.(making size of images all same) 02020900
+              key={movie.id}
+              src={`${base_url}${
+                isLargeRow ? movie.poster_path : movie.backdrop_path
+              }`} // if it is a LargeRow, then use "movie.poster_path". If not (if it is a small one, then use "movie.backdrop_path" 02020600
+              alt={movie.name} // 02020720
+            /> //interpolate a string for src. previously it was src="" 02020510 https://dmitripavlutin.com/string-interpolation-in-javascript/
+          )
+        )}
+      </div>
     </div>
   );
 }
