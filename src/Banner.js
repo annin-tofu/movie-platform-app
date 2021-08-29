@@ -53,7 +53,9 @@ function Banner() {
     >
       <div className="banner__contents">
         {/* if there is no "movie.title", and use "movie.name". and if there is no "movie.name", and use "movie.original_name" */}
-        <h1 className="banner__title">{movie?.title || movie?.name || movie?.original_name}</h1>
+        <h1 className="banner__title">
+          {movie?.title || movie?.name || movie?.original_name}
+        </h1>
         <div className="banner__buttons">
           {/* PLAY BUTTON */}
           <button className="banner__button">Play</button>
@@ -61,11 +63,9 @@ function Banner() {
           <button className="banner__button">My List</button>
         </div>
         <h1 className="banner__description">
-          {/* truncate: cuts the long text shorter and ends it with "..." */}
-          {truncate(
-         movie?.overview,
-            150
-          )}
+          {/* https://medium.com/@DylanAttal/truncate-a-string-in-javascript-41f33171d5a8
+          truncate: cuts the long text shorter and ends it with "..." . second parameter 150 means that after 150 characters, it cuts the string set in first parameter and adds "..." to the end of the truncated string.*/}
+          {truncate(movie?.overview, 150)}
         </h1>
       </div>
 
