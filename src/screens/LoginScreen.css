@@ -31,6 +31,9 @@
   z-index: 1;
   color: white;
   padding: 20px;
+  /* left and right were set for signupscreen. without these, Sign In box wouldnt go center of the screen 03010800*/
+  left: 0;
+  right: 0;
 }
 
 .loginScreen__gradient {
