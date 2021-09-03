@@ -4,11 +4,14 @@ import HomeScreen from "./screens/HomeScreen";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"; //React-Router https://reactrouter.com/web/guides/quick-start 03002600
 import LoginScreen from "./screens/LoginScreen";
 import { auth } from "./firebase"; //have authentication object ready 03013100
+import { useDispatch, useSelector } from "react-redux";
+import { login, logout, selectUser } from "./features/userSlice"; //Redux 03014130
 
 function App() {
-  const user = null;
+  const user = useSelector(selectUser); // originally it was "null" but changed to "useSelector(selectUser)" 03014530 check "export const selectUser = (state) => state.user.user;" in useSlice.js
   //for testing 03003520
   //  const user = { name: "John Doe" };
+  const dispatch = useDispatch(); //Redux 03014100
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(
@@ -17,10 +20,17 @@ function App() {
       //userAuth callback
       (userAuth) => {
         if (userAuth) {
+          dispatch(
+            login({
+              uid: userAuth.uid,
+              email: userAuth.email,
+            })
+          ); ///Redux 03014130 .. passing "action.payload" as in userSlice.js (check reducers..login)
           //LOGGED IN
           console.log(userAuth);
         } else {
           //LOGGED OUT
+          dispatch(logout); //Redux 03014130 .. This is basically resetting user back to null as coded in userSlice.js (check reducers..logout)
         }
       }
     );

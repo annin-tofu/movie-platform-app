@@ -21,5 +21,6 @@ export const userSlice = createSlice({
 export const { login, logout } = userSlice.actions;
 
 export const selectUser = (state) => state.user.user; //SELECTORS: selectors are essentially how you access.user  // if you push into global store, for example, "user" store. you push information using "action". but how do you use it inside of your component? if you get a piece of infomation our of the "user" store. then all you need to do is basically create "selector". 03013800
+//it goes to "user"store, and get "user" info
 
 export default userSlice.reducer;
