@@ -8,6 +8,7 @@ function SignupScreen() {
   const passwordRef = useRef(null);
 
   //AUTHENTICATION 03011700
+  //   SIGN UP PART  (register)
   const register = (e) => {
     e.preventDefault(); // e.preventDefault: dont want to do typical refresh.(it, by default, refreshes... so you want to prevent that default behavior) 03011700
 
@@ -23,9 +24,21 @@ function SignupScreen() {
         alert(error.message);
       }); // 03012500
   };
+
+  //   SIGN IN
   const signIn = (e) => {
     e.preventDefault();
-  }; //e.preventDefault: dont want to do typical refresh.(it, by default, refreshes... so you want to prevent that default behavior) 03011700
+    //e.preventDefault: dont want to do typical refresh.(it, by default, refreshes... so you want to prevent that default behavior) 03011700
+    auth
+      .signInWithEmailAndPassword(
+        emailRef.current.value,
+        passwordRef.current.value
+      )
+      .then((authUser) => {
+        console.log(authUser);
+      })
+      .catch((error) => alert(error.message));
+  };
 
   return (
     <div className="signupScreen">
