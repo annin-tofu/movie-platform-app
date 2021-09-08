@@ -32,13 +32,14 @@ function App() {
         } else {
           //LOGGED OUT
           dispatch(logout()); //Redux 03014130 .. This is basically resetting user back to null as coded in userSlice.js (check reducers..logout)
+          //resets the "user" inside of REDUX state 03015900
         }
       }
     );
 
     // return () => {unsubscribe()}; // when it cleans up, go ahead and and run unsubscribe. This is basically equivalent to below
     return unsubscribe; // whenever using useEffect, use this "clean up function" 03013330. this is becuse the "Listener" ("onAuthStateChanged") is taking up some memory. and it needs to be released and we dont want duplicate another listener running simultaneously 0313330
-  }, [dispatch]);
+  }, [dispatch]); // useEffect is dependant on "dispatch" method. it needs to run this and double check this code everytime you have dispatch event 03015930
 
   return (
     // BEM
@@ -57,12 +58,14 @@ function App() {
           </Route> */}
 
             {/* ProfileScreen 03014851 */}
+            {/* http://localhost:3000/profile will take you to ProfileScreen */}
             <Route path="/profile">
               <ProfileScreen />
             </Route>
 
             {/* difference between <Route exact path=“/” /> and <Route path=“/” />
 https://stackoverflow.com/questions/49162311/react-difference-between-route-exact-path-and-route-path */}
+            {/* http://localhost:3000/ will take you to HomeScreen */}
             <Route exact path="/">
               <HomeScreen />
             </Route>

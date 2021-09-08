@@ -2,6 +2,7 @@
 
 // NAV BAR
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom"; //03014943
 import "./Nav.css";
 
 function Nav() {
@@ -10,6 +11,7 @@ function Nav() {
   // https://youtu.be/1TCw9wO1neA?t=3931
 
   const [show, handleShow] = useState(false);
+  const history = useHistory(); //03014943
 
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
@@ -34,6 +36,7 @@ function Nav() {
       <div className="nav__contents">
         {/* NEXTFIX LOGO */}
         <img
+          onClick={() => history.push("/")} //programatically, push the next page into the hisotry stack. This is similar to REACT-NATIVE stack idea 03015150
           className="nav__logo"
           src="https://res.cloudinary.com/dhyagpwyl/image/upload/v1626119196/Nextfix_logo_vpneqm.png"
           //alt property is for SEO. add words to describe the image. here "nextfix" will the best. You can also leave it empty, but always alt="" needs to be included in img tag.
@@ -42,6 +45,7 @@ function Nav() {
 
         {/* AVATAR LOGO */}
         <img
+          onClick={() => history.push("/profile")} //programatically, push the next page into the hisotry stack. This is similar to REACT-NATIVE stack idea 03014943
           className="nav__avatar"
           src="https://res.cloudinary.com/dhyagpwyl/image/upload/v1626103066/hBEe3tdn_400x400_d7t7jg.png"
           alt=""
