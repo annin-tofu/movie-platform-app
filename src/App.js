@@ -6,6 +6,7 @@ import LoginScreen from "./screens/LoginScreen";
 import { auth } from "./firebase"; //have authentication object ready 03013100
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./features/userSlice"; //Redux 03014130
+import ProfileScreen from "./screens/ProfileScreen";
 
 function App() {
   const user = useSelector(selectUser); // originally it was "null" but changed to "useSelector(selectUser)" 03014530 check "export const selectUser = (state) => state.user.user;" in useSlice.js
@@ -30,14 +31,14 @@ function App() {
           console.log(userAuth);
         } else {
           //LOGGED OUT
-          dispatch(logout); //Redux 03014130 .. This is basically resetting user back to null as coded in userSlice.js (check reducers..logout)
+          dispatch(logout()); //Redux 03014130 .. This is basically resetting user back to null as coded in userSlice.js (check reducers..logout)
         }
       }
     );
 
     // return () => {unsubscribe()}; // when it cleans up, go ahead and and run unsubscribe. This is basically equivalent to below
     return unsubscribe; // whenever using useEffect, use this "clean up function" 03013330. this is becuse the "Listener" ("onAuthStateChanged") is taking up some memory. and it needs to be released and we dont want duplicate another listener running simultaneously 0313330
-  }, []);
+  }, [dispatch]);
 
   return (
     // BEM
@@ -54,6 +55,11 @@ function App() {
             {/* <Route exact path="/test">
             <h1>test</h1>
           </Route> */}
+
+            {/* ProfileScreen 03014851 */}
+            <Route path="/profile">
+              <ProfileScreen />
+            </Route>
 
             {/* difference between <Route exact path=“/” /> and <Route path=“/” />
 https://stackoverflow.com/questions/49162311/react-difference-between-route-exact-path-and-route-path */}
